@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    
+    <h3>{{heading}}</h3>
+    <form action="" method="POST">
+    {{user_form.as_p}}
+    {% csrf_token %}
+    <input type="submit" name="submit" value="submit">
+    </form>
+    <hr>
+    {% if form_submitted%}
+    <p>name : {{user_name}}</p>
+    <p>date of birth : {{user_dob}}</p>
+    <p>name : {{user_email}}</p>
+    {%endif%}
+
+</body>
+</html>

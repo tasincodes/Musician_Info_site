@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+    <title>Musician list</title>
+</head>
+<body>
+    <h1>{{ text_1 }}</h1>
+    <table border="1">
+        <tr>
+            <th>First name </th>
+            <th>Last name </th>
+            <th>Instrument </th>
+        </tr>
+        
+        {% for row in musician %}
+        <tr>
+            <td>{{row.First_name}}</td>
+            <td>{{row.Last_name}}</td>
+            <td>{{row.instrument}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
