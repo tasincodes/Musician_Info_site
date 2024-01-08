@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+
+
+{% block body_block %}
+
+<h2>Artist Name : {{ artist_info.First_name}} {{ artist_info.Last_name}}</h2>
+    <h3>Artist Rating : {{artist_ratin.rating__avg}}</h3>
+    <h3>Instrument : {{artist_info.instrument}}</h3>
+    <a href="{% url 'first_app:edit_artist' artist_id=artist_info.id %}" class="btn btn-info btn-sm">Edit</a>
+    <h1>Album List</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Album Name</th>
+            <th>Release date</th>
+            <th>Rating</th>
+        </tr>
+        {%for album in album_inf%}
+        <tr>
+            <td><a href="{% url 'first_app:edit_album' album_id=album.id %}">{{album.name}}</a></td>
+            <td>{{album.release_date|date:"M d, Y"}}</td>
+            <td>{{album.rating}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+<br>
+
+<a href="{% url 'first_app:delete_artist' artist_id=artist_info.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Delete The Artist??')">Delete</a>
+
+{% endblock %}
+
+
+
+
+
+<!-- {%if album_inf%}
+    {% for album in album_inf%}
+    <h1>{{album.name}}</h1>
+    {%endfor%}
+    {%else%}
+    <h3>NO album is listed</h3>
+    {%endif%} -->

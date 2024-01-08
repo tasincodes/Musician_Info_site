@@ -1,4 +1,68 @@
 <!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+{% block body_block %}
+
+<h1>List of Musician :</h1>
+<ul>
+    {% if musician_list %}
+    {% for musician in musician_list%}
+    <li><a href="{% url 'first_app:album_list' artist_id=musician.id %}">{{musician.First_name}} {{musician.Last_name}}</a></li>
+    {%endfor%}
+    {% else %}
+    <h4>No musician in the list</h4>
+
+    {%endif%}
+
+
+
+</ul>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
@@ -27,4 +91,4 @@
     </table>
     
 </body>
-</html>
+</html> -->

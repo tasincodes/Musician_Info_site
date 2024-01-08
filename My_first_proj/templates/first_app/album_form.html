@@ -1,4 +1,28 @@
-<html lang="en">
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+
+
+{% block body_block %}
+
+<h1>Album form :</h1>
+<form method="post">
+    {{ album_form.as_p}}
+    {%csrf_token%}
+    <input type="submit" name="submit" value="Add" class="btn btn-primary btn-sm">
+</form>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +37,12 @@
     <input type="submit" name="submit" value="submit">
     </form>
     <hr>
-    {% if form_submitted%}
+    <!-- this is also for forms.py sec 1 -->
+    <!-- {% if form_submitted%}
     <p>name : {{user_name}}</p>
     <p>date of birth : {{user_dob}}</p>
     <p>name : {{user_email}}</p>
-    {%endif%}
+    {%endif%} -->
 
-</body>
-</html>
+<!-- </body>
+</html> --> -->

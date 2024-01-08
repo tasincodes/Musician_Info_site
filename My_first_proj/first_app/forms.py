@@ -8,9 +8,13 @@ class MusicianForm(forms.ModelForm):
         model = Musician
         fields = "__all__"
         # exclude = ['First_name']
-        # fields = ('First_name') for including
+        # fields = ('First_name') for including field
 
-
+class album_form(forms.ModelForm):
+    release_date = forms.DateField(widget=forms.TextInput(attrs={'type':'date'}))
+    class Meta:
+        model = Album
+        fields = "__all__"
 
 
 ## this is forms.py sec -1
